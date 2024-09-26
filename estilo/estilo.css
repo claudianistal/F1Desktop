@@ -1,0 +1,37 @@
+/*Claudia Nistal Martinez, UO294420*/
+
+/*Especificidad: 001*/
+body{
+    font-family: Century Gothic, sans-serif;
+    color: #010100;
+    background-color:#E9EAEC;
+}
+
+/*Especificidad: 001*/
+h1{
+    color: #333652;
+}
+
+/*Especificidad: 001*/
+h2{
+    color: #FAD02C;
+}
+
+/*Especificidad: 001*/
+h3{
+    color: #90ADC6;
+}
+
+
+
+
+
+/* 
+    #E9EAEC -> blanco roto 
+    #333652 -> dark blue
+    #FAD02C -> amarillo
+    #90ADC6 -> azul gris
+    #FFFAF0 -> amarillo roto
+    #FC2E20 -> rojo
+    #FDB750 -> amarillo carrera
+*/
