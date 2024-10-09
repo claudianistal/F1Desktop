@@ -1,0 +1,186 @@
+/*Claudia Nistal Martinez, UO294420*/
+
+/*Especificidad: 001*/
+body{
+    font-family: "Trebuchet MS", sans-serif;
+    color: #010100;
+    background-color:#E9EAEC;
+}
+
+/*Especificidad: 001*/
+/*Color de fondo heredado de body*/
+h2{
+    color: #FFA303;
+    background-color:#333652;
+    padding-left: 2em;
+    font-size: 2em;
+}
+
+/*Especificidad: 001*/
+/*Color de fondo heredado de body*/
+h3{
+    color: #BA0F30;
+    padding-left: 5em;
+}
+
+/*Especificidad: 001*/
+h4 {
+    padding-left: 6em;
+    font-weight: bold;
+}
+
+/*Especificidad: 001*/
+p {
+    text-align: justify;
+    padding-left: 6em;
+    padding-right: 6em;
+}
+
+/*Especificidad: 012*/
+/*Selector especifico para las migas de navegacion*/
+body>p:first-of-type {
+    font-size: small;
+    padding-left:4em;
+}
+
+/*Las migas de navegación en los dispositivos moviles no deben mostrarse*/
+@media (max-width: 480px) {
+    /*Especificidad: 012*/
+    body>p:first-of-type {
+        
+        display: none;
+    }
+    
+}
+
+/*Especificidad: 001*/
+/*Color de fondo heredado de body*/
+a {
+    color: #66033d;
+    text-decoration: none;
+}
+
+/*Especificidad: 001*/
+/*Listas de definicion*/
+dl {
+    padding-left: 6em;
+}
+
+/*Especificidad: 002*/
+/*Listas de definicion*/    
+dl dt{
+    text-decoration-line: underline;
+    font-weight: bold;
+}
+
+/*Especificidad: 001*/
+/*Listas no ordenadas*/
+ul {
+    padding-left: 8em;
+    list-style-type: "➔ ";
+}
+
+/*Especificidad: 003*/
+/*Listas no ordenadas*/
+ul li ul{
+    padding-left: 3em;
+    list-style-type: "➝ ";
+}
+
+/*Especificidad: 001*/
+/*Listas ordenadas*/
+ol {
+    padding-left: 8em;;
+}
+
+/*Especificidad: 001*/
+/* Estilo general para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    padding: 1.25em;
+    background-color: #f8f9fa;
+    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1); 
+}
+
+/*Especificidad: 001*/
+/* Estilo para el caption (título de la tabla) */
+/*Color de fondo heredado de table*/
+caption {
+    caption-side: top;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.625em; 
+    color: #2c3e50;
+}
+
+/*Especificidad: 001*/
+/* Estilo para las celdas th (encabezados de columna) */
+th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.625em; 
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/*Especificidad: 001*/
+/* Estilo para las celdas td (datos)
+    Color de fondo heredado de table */
+td {
+    padding: 0.625em;
+    text-align: center;
+    color: #333;
+    word-wrap: break-word;
+}
+
+/*Especificidad: 001*/
+/* Bordes para las celdas */
+th, td {
+    border: 0.0625em solid #ddd; 
+}
+
+/*Especificidad: 011*/
+/* Estilo para la primera columna (encabezado de fila) */
+th[scope="row"] {
+    background-color: #34495e;
+    color: #fff;
+    font-weight: bold;
+}
+
+/*Especificidad: 001*/
+video {
+    width:100%;
+    height:auto;
+    padding-left: 5em;
+}
+
+/*Especificidad: 001*/
+picture{
+    width:100%;
+    height:auto;
+    padding-left: 8em;
+}
+
+/*Especificidad: 001*/
+audio{
+    width: 100%; 
+    height: 3em; 
+    padding-left: 5em; 
+    outline: none; 
+}
+
+
+
+/* 
+    #E9EAEC -> blanco roto 
+    #333652 -> dark blue
+    #FAD02C -> amarillo
+    #90ADC6 -> azul gris
+    #FFFAF0 -> amarillo roto
+    #FC2E20 -> rojo
+    #FDB750 -> amarillo carrera
+*/
