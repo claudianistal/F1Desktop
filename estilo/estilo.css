@@ -162,6 +162,13 @@ video {
 picture{
     width:100%;
     height:auto;
+    padding: 16vw;
+}
+
+@media (max-width: 768px) {
+    picture{
+        padding: 8vw;
+    }
 }
 
 /*Especificidad: 001*/
