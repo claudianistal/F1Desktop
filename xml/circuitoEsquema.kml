@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='utf-8'?>
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 621.28 m
+</description><Point><coordinates>
+19.2423645,47.5820992,229
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 28.36 m
+</description><Point><coordinates>
+19.2423018,47.5823512,228
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 29.16 m
+</description><Point><coordinates>
+19.2426196,47.5825016,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 72.96 m
+</description><Point><coordinates>
+19.2435928,47.5824738,225
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 80.00 m
+</description><Point><coordinates>
+19.2446294,47.5822826,224
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 66.11 m
+</description><Point><coordinates>
+19.2453631,47.5819535,223
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 198.53 m
+</description><Point><coordinates>
+19.2474307,47.5808517,221
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 48.94 m
+</description><Point><coordinates>
+19.2480759,47.5808274,219
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 40.16 m
+</description><Point><coordinates>
+19.2484048,47.5811151,216
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 30.85 m
+</description><Point><coordinates>
+19.2483872,47.5813892,214
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 117.48 m
+</description><Point><coordinates>
+19.2476421,47.5823122,206
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 31.82 m
+</description><Point><coordinates>
+19.2476608,47.5826152,204
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 361.49 m
+</description><Point><coordinates>
+19.2498327,47.5855111,208
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 89.83 m
+</description><Point><coordinates>
+19.2505733,47.5861610,213
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 16.86 m
+</description><Point><coordinates>
+19.2505876,47.5863198,214
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 185.31 m
+</description><Point><coordinates>
+19.2499898,47.5879361,215
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 39.85 m
+</description><Point><coordinates>
+19.2501976,47.5882652,216
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 30.06 m
+</description><Point><coordinates>
+19.2505550,47.5884010,217
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 30.65 m
+</description><Point><coordinates>
+19.2509622,47.5884131,218
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 87.77 m
+</description><Point><coordinates>
+19.2519539,47.5880056,220
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 175.37 m
+</description><Point><coordinates>
+19.2535427,47.5868516,225
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 19.2 m
+</description><Point><coordinates>
+19.2535066,47.5866797,225
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 26.81 m
+</description><Point><coordinates>
+19.2532831,47.5864955,226
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 157.07 m
+</description><Point><coordinates>
+19.2537908,47.5851289,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 34.28 m
+</description><Point><coordinates>
+19.2541435,47.5849353,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 89.91 m
+</description><Point><coordinates>
+19.2553302,47.5848081,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 26.86 m
+</description><Point><coordinates>
+19.2556111,47.5846604,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 27.19 m
+</description><Point><coordinates>
+19.2557392,47.5844275,228
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 156.51 m
+</description><Point><coordinates>
+19.2554791,47.5830306,230
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 57.11 m
+</description><Point><coordinates>
+19.2557171,47.5825399,231
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 107.33 m
+</description><Point><coordinates>
+19.2564929,47.5817405,232
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 31.3 m
+</description><Point><coordinates>
+19.2565791,47.5814652,233
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 26.26 m
+</description><Point><coordinates>
+19.2564982,47.5812342,233
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 2
+</name><description>
+Distancia: 120.65 m
+</description><Point><coordinates>
+19.2554876,47.5803967,234
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 267.55 m
+</description><Point><coordinates>
+19.2530713,47.5786221,230
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 24.8 m
+</description><Point><coordinates>
+19.2527596,47.5786871,228
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 122.73 m
+</description><Point><coordinates>
+19.2516552,47.5794931,226
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 69.38 m
+</description><Point><coordinates>
+19.2508916,47.5798649,226
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 38.4 m
+</description><Point><coordinates>
+19.2503908,47.5798527,226
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 32.22 m
+</description><Point><coordinates>
+19.2501526,47.5796057,227
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 34.1 m
+</description><Point><coordinates>
+19.2502634,47.5793128,228
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 152.35 m
+</description><Point><coordinates>
+19.2518405,47.5784589,234
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 40.69 m
+</description><Point><coordinates>
+19.2520258,47.5781300,235
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 37.04 m
+</description><Point><coordinates>
+19.2518907,47.5778030,235
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 42.38 m
+</description><Point><coordinates>
+19.2514354,47.5775807,236
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 55.08 m
+</description><Point><coordinates>
+19.2507024,47.5776485,236
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 3
+</name><description>
+Distancia: 178.47 m
+</description><Point><coordinates>
+19.2488347,47.5786405,236
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Tramo Sector 1
+</name><description>
+Distancia: 621.28 m
+</description><Point><coordinates>
+19.2423645,47.5820992,229
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></Point></Placemark><Placemark><name>
+Ruta Completa
+</name><LineString><extrude>
+1
+</extrude><tessellation>
+1
+</tessellation><coordinates>
+19.2423645,47.5820992,229 19.2423018,47.5823512,228 19.2426196,47.5825016,227 19.2435928,47.5824738,225 19.2446294,47.5822826,224 19.2453631,47.5819535,223 19.2474307,47.5808517,221 19.2480759,47.5808274,219 19.2484048,47.5811151,216 19.2483872,47.5813892,214 19.2476421,47.5823122,206 19.2476608,47.5826152,204 19.2498327,47.5855111,208 19.2505733,47.5861610,213 19.2505876,47.5863198,214 19.2499898,47.5879361,215 19.2501976,47.5882652,216 19.2505550,47.5884010,217 19.2509622,47.5884131,218 19.2519539,47.5880056,220 19.2535427,47.5868516,225 19.2535066,47.5866797,225 19.2532831,47.5864955,226 19.2537908,47.5851289,227 19.2541435,47.5849353,227 19.2553302,47.5848081,227 19.2556111,47.5846604,227 19.2557392,47.5844275,228 19.2554791,47.5830306,230 19.2557171,47.5825399,231 19.2564929,47.5817405,232 19.2565791,47.5814652,233 19.2564982,47.5812342,233 19.2554876,47.5803967,234 19.2530713,47.5786221,230 19.2527596,47.5786871,228 19.2516552,47.5794931,226 19.2508916,47.5798649,226 19.2503908,47.5798527,226 19.2501526,47.5796057,227 19.2502634,47.5793128,228 19.2518405,47.5784589,234 19.2520258,47.5781300,235 19.2518907,47.5778030,235 19.2514354,47.5775807,236 19.2507024,47.5776485,236 19.2488347,47.5786405,236 19.2423645,47.5820992,229
+</coordinates><altitudeMode>
+absolute
+</altitudeMode></LineString><Style><LineStyle><color>
+ff0000ff
+</color><width>
+2
+</width></LineStyle></Style></Placemark></Document></kml>

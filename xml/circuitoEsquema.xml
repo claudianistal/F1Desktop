@@ -361,5 +361,12 @@
                 <altura>236</altura>
             </coordenadaFinal>
         </tramo>
+        <tramo sector= "1" distancia="621.28" unidades="m">
+            <coordenadaFinal>
+                <latitud>47.5820992</latitud>
+                <longitud>19.2423645</longitud>
+                <altura>229</altura>
+            </coordenadaFinal>
+        </tramo>
     </puntosCircuito>
 </evento>
