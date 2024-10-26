@@ -8,9 +8,9 @@ class SVGGenerator:
         self.margin = margin
         self.svg_elements = []
 
-    def add_polyline(self, points, stroke_color="black", fill_color="none", stroke_width=2):
+    def add_polyline(self, points, stroke_color="blue", fill_color="lightblue", stroke_width=2):
         """
-        Añade una polilínea a la lista de elementos SVG.
+        Añade una polilínea cerrada para el perfil altimétrico, simulando el suelo en el gráfico.
         """
         points_str = " ".join([f"{x},{y}" for x, y in points])
         polyline = f'<polyline points="{points_str}" stroke="{stroke_color}" fill="{fill_color}" stroke-width="{stroke_width}" />'
@@ -28,7 +28,7 @@ class SVGGenerator:
             file.write(svg_content)
         print(f"Archivo SVG generado: {filename}")
 
-def extraer_coordenadas_y_generar_svg(archivoXML):
+def extraer_alturas_y_generar_svg(archivoXML):
     # Obtener la ruta completa y el directorio del archivo XML
     ruta_completa = os.path.abspath(archivoXML)
     directorio = os.path.dirname(ruta_completa)
@@ -47,56 +47,52 @@ def extraer_coordenadas_y_generar_svg(archivoXML):
 
     raiz = arbol.getroot()
     
-    # Lista para almacenar los puntos del perfil altimétrico
-    puntos = []
-    min_altura, max_altura = float('inf'), float('-inf')
+    # Lista para almacenar las alturas
+    alturas = []
+    max_altura = float('-inf')
     
-    # Recorrer los tramos del XML
+    # Recorrer los tramos del XML y extraer solo las alturas
     for tramo in raiz.findall('.//{http://www.uniovi.es}tramo'):
         coordenada_final = tramo.find('{http://www.uniovi.es}coordenadaFinal')
 
         if coordenada_final is not None:
-            latitud = float(coordenada_final.find('{http://www.uniovi.es}latitud').text)
-            longitud = float(coordenada_final.find('{http://www.uniovi.es}longitud').text)
             altura = float(coordenada_final.find('{http://www.uniovi.es}altura').text)
-
-            # Actualizar la altitud mínima y máxima
-            if altura < min_altura:
-                min_altura = altura
+            
+            # Actualizar la altura máxima
             if altura > max_altura:
                 max_altura = altura
 
-            # Almacenar solo la altitud para el perfil
-            puntos.append((longitud, altura))
+            # Añadir la altura a la lista
+            alturas.append(altura)
 
-    # Normalizar las coordenadas para ajustarlas al tamaño del SVG
-    if not puntos:
-        print("No se encontraron tramos con coordenadas.")
+    # Normalizar las alturas para que el mínimo sea 0
+    if not alturas:
+        print("No se encontraron tramos con alturas.")
         return
 
     ancho_svg = 800  # Ancho del SVG
     alto_svg = 400   # Alto del SVG
     margen = 50  # Margen para dar espacio en los bordes
-    escala_altura = (alto_svg - 2 * margen) / (max_altura - min_altura) if max_altura != min_altura else 1
+    escala_altura = (alto_svg - 2 * margen) / max_altura if max_altura != 0 else 1
 
-    # Normalizar las longitudes para que encajen en el ancho
-    longitudes = [x for x, y in puntos]
-    min_long, max_long = min(longitudes), max(longitudes)
-    escala_longitud = (ancho_svg - 2 * margen) / (max_long - min_long) if max_long != min_long else 1
-
+    # Generar puntos (x, y) para el perfil altimétrico en función de la altura
     puntos_normalizados = []
-    for longitud, altura in puntos:
-        x = margen + (longitud - min_long) * escala_longitud
-        y = alto_svg - margen - (altura - min_altura) * escala_altura
+    for i, altura in enumerate(alturas):
+        x = margen + i * ((ancho_svg - 2 * margen) / (len(alturas) - 1))
+        y = alto_svg - margen - altura * escala_altura  # Altura normalizada desde la base (0)
         puntos_normalizados.append((x, y))
 
-    # Crear una polilínea SVG cerrada para simular el suelo
+    # Cerrar el polígono para simular el suelo
+    puntos_normalizados.append((ancho_svg - margen, alto_svg - margen))  # Extremo derecho en la línea de suelo
+    puntos_normalizados.insert(0, (margen, alto_svg - margen))           # Extremo izquierdo en la línea de suelo
+
+    # Crear el gráfico SVG
     svg_gen = SVGGenerator(width=ancho_svg, height=alto_svg, margin=margen)
-    svg_gen.add_polyline(puntos_normalizados, stroke_color="blue", fill_color="lightgrey", stroke_width=2)
+    svg_gen.add_polyline(puntos_normalizados, stroke_color="blue", fill_color="lightblue", stroke_width=2)
 
     # Generar el archivo SVG en el mismo directorio que el XML
     svg_gen.generate_svg(archivoSVG)
 
 # Uso del código
-archivoXML = 'C:\\Users\\Claudia\\OneDrive - Universidad de Oviedo\\3 Software\\Primer Cuatrimestre\\SEW\\SEW Lab\\F1Desktop\\xml\\circuitoEsquema.xml'
-extraer_coordenadas_y_generar_svg(archivoXML)
+archivoXML = 'C:\\Users\\Claudia\\OneDrive - Universidad de Oviedo\\3 Software\\Primer Cuatrimestre\\SEW\\SEW Lab\\F1Desktop\\xml\\circuitoEsquema.xml'  
+extraer_alturas_y_generar_svg(archivoXML)
