@@ -1,0 +1,96 @@
+/*Claudia Nistal Martinez, UO294420*/
+
+/*Especificidad: 011*/
+section:last-of-type{
+    display: grid;
+    grid-gap: 2em;                   
+    padding: 1em;
+    justify-items: center;        
+    grid-template-columns: repeat(3, 1fr);   
+    width: auto;
+}
+
+/*Especificidad: 002*/
+section > h3 {
+    grid-column: 1 / -1;
+    text-align: center;  
+    margin: 0;  
+}
+
+/*Especificidad: 001*/
+article {
+    background-color: #333652;
+    border-radius: 1em;
+    padding: 1.5em;
+    margin: 1.5em auto; 
+    max-width: 37em;
+}
+
+/*Especificidad: 002*/
+article img {
+    max-width: 7.5em;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+}
+
+/*Especificidad: 002*/
+article h4 {
+    font-size: 1.5em;
+    color: #FFA303;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 0%;
+}
+/*Especificidad: 002*/
+article p {
+    font-size: 1.1em;
+    color: #fcfcfc;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0;
+}
+/*Especificidad: 011*/
+h3:last-child {
+    text-align: center;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /*Especificidad: 011*/
+    section:last-of-type{
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0;
+        font-size: small;
+        grid-gap: 0;
+    }
+    /*Especificidad: 001*/
+    article {
+        width: 40%;
+    }
+    /*Especificidad: 001*/
+    article p {
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    /*Especificidad: 011*/
+    section:last-of-type{
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0;
+        font-size: small;
+        grid-gap: 0;
+    }
+    /*Especificidad: 001*/
+    article {
+        width: 50%;
+    }
+    /*Especificidad: 001*/
+    article p {
+        padding: 0;
+    }
+}

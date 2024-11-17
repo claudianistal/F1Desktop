@@ -11,7 +11,10 @@
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/article_elements.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/noticias.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -34,7 +37,39 @@
     </p>
 
     <h2>Noticias</h2>
-    <p>En desarrollo</p>
+    <main> 
+        <input type="file">
+        <output></output>
+        
+        <section>
+            <h3>Creación de Noticia: </h3>
+            <form>
+                <label>Título:</label>
+                <textarea></textarea>
+    
+                <label>Entradilla:</label>
+                <textarea></textarea>
+    
+                <label>Autor:</label>
+                <textarea></textarea>
+                <button type="button" onclick="noticiasApi.crearNoticia()">Añadir Noticia</button>
+            </form>
+        </section>
+    
+    
+        <section>
+            <h3>Noticias cargadas</h3>
+        </section>
+    
+        <script>
+            $("input[type='file']").on("change", function(event) {
+                const file = event.target.files[0];
+                noticiasApi.readInputFile(file);
+            });
+        </script>
+    </main>
+   
+
 </body>
 
 </html>

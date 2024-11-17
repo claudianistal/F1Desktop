@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/fondo.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -29,7 +31,15 @@
             <a href="juegos.html" title="enlace al documento juegos.html">Juegos</a> 
         </nav>
     </header>
-    <h2>Índice</h2>
-    <p>En desarrollo </p>
+
+   <script>
+    $(document).ready(function() {
+        var fondo = new Fondo("Hungría", "Budapest", "Hungaroring");
+        fondo.obtenerImagenDeAPI();
+    });
+    </script>
+
 </body>
+
+
 </html>

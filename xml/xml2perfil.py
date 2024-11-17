@@ -20,7 +20,7 @@ class SVGGenerator:
         """
         Genera el archivo SVG con los elementos añadidos.
         """
-        svg_content = f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.width}" height="{self.height}">'
+        svg_content = f'<svg xmlns="http://www.w3.org/2000/svg">'
         svg_content += "\n".join(self.svg_elements)
         svg_content += '</svg>'
         

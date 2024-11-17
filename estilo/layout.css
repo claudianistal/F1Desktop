@@ -41,9 +41,9 @@ nav a{
 nav a.active {
     color: #FFA303; 
     font-weight: bold; 
-    border: 2px solid #ffcc00; /* Borde alrededor del enlace */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 0.2em; /* Espaciado interno adicional para el borde */
+    border: 2px solid #ffcc00; 
+    border-radius: 5px; 
+    padding: 0.2em;
 }
 
 

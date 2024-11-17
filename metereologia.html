@@ -12,7 +12,10 @@
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/article_elements.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/pais.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -30,11 +33,47 @@
             <a href="juegos.html" title="enlace al documento juegos.html">Juegos</a> 
         </nav>
     </header>
+
     <p>
         Estás en: <a href = "index.html" title="Página principal">[Índice]</a> >> [Metereología]
     </p>
-    <h2>Metereología</h2>
-    <p>En desarrollo </p>
+
+    <main>
+        <h2>Metereología: Hungría</h2>
+        <section>
+            <h3>Información acerca del país</h3>
+            <h4>Nombre del país: </h4>
+            <h4>Capital del país: </h4>
+            <h4>Información adicional:</h4>
+        </section>
+            
+        <script>
+            var hungria = new Pais("Hungría", "Budapest", 9660351);
+    
+            var elementosH4 = document.querySelectorAll("h4");
+    
+            
+            elementosH4[0].textContent += ` ${hungria.getNombre()}`;
+            elementosH4[1].textContent += ` ${hungria.getCapital()}`;
+    
+            hungria.setInfoAdicional("Circuito de Hungaroring", "República Parlamentaria", "47.5786405, 19.2488347", "Cristianismo");
+    
+            document.write(hungria.getListaInfoSec());
+            hungria.writeCoordenadas();
+        </script>
+
+        <section>
+            <h3>Pronóstico del tiempo para los próximos 5 días:</h3>
+            <script>
+                hungria.cargarPrevisionTiempo();
+            </script>
+        </section>
+        
+       
+    </main>
+
+   
+    
 </body>
 
 </html>

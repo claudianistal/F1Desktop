@@ -1,0 +1,114 @@
+/*Claudia Nistal Martinez, UO294420*/
+
+
+/*Especificidad: 011*/
+section:nth-of-type(2){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%; /* Espacio entre las tarjetas */
+    justify-content: center;
+}
+
+
+/*Especificidad: 012*/
+section:nth-of-type(2) h2 {
+    flex: 100%;
+    text-align: center;
+    width: 100vw;
+    padding: 0;
+}
+
+
+/*Especificidad: 013*/
+section:nth-of-type(2)> article h3, section:nth-of-type(2)  > article img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5%;
+    background: #333652;
+    backface-visibility: hidden;
+}
+
+/*Especificidad: 012*/
+section:nth-of-type(2) h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:#ffffff;
+    padding-left: 0;
+}
+
+
+/*Especificidad: 012*/
+section:nth-of-type(2) > article {
+    width: 20%;
+    height: 12em;
+    transform: scale(1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    margin-bottom: 5%;
+}
+
+/*Especificidad: 022*/
+section:nth-of-type(2) > article[data-state=flip] {
+    transform: rotateY(180deg);
+}
+
+/*Especificidad: 022*/
+section:nth-of-type(2) > article[data-state=revealed] {
+    transform: rotateY(180deg);
+}
+
+/*Especificidad: 013*/
+section:nth-of-type(2)  > article img{
+    transform: rotateY(180deg);
+}
+
+button {
+    margin-left: 6.4vw;
+}
+
+
+
+@media (max-width: 480px) {
+    section:nth-of-type(2) {
+        margin: 0;
+    }
+
+    section:nth-of-type(2) > article {
+       height: 8em;
+    }
+
+    section:nth-of-type(2)> article h3 {
+        font-size: x-small;
+    }
+
+    section > ul {
+        padding-left: 2em;
+    }
+    
+}
+
+/* Media query para tablets (máximo 768px de ancho) */
+@media (max-width: 768px) {
+    section:nth-of-type(2) {
+        margin: 0;
+    }
+
+    section:nth-of-type(2) > article {
+       height: 11em;
+    }
+
+    section:nth-of-type(2)> article h3 {
+        font-size: small;
+    }
+
+    section > ul {
+        padding-left: 2em;
+    }
+    
+}
