@@ -164,16 +164,39 @@ class Memoria {
             game.checkForMatch();
         }
     }
-
-    muestraReglasJuego(){
-        alert("En el Juego de cartas de Memoria tu objetivo es encontrar todas las parejas de cartas que representan los equipos de F1." +
-            "\n\nInstrucciones:" +
-            "\n1. Haz clic en una carta para destaparla." +
-            "\n2. Si las dos cartas descubiertas son iguales, se mantendrán visibles." +
-            "\n3. Si no coinciden, ambas cartas se ocultarán nuevamente." +
-            "\n\n¡Pon a prueba tu memoria y encuentra todas las parejas en el menor tiempo posible!");
-      
-    }
     
+}
+
+class ReglasJuego {
+    constructor() {
+        this.modal = document.querySelector("section:nth-of-type(2) > section");
+        this.closeButton = this.modal.querySelector("button");
+        this.parentSection = document.querySelector("section:nth-of-type(2)");
+
+        this.addEventListeners();
+    }
+
+    // Muestra la ventana modal
+    showModal() {
+        this.modal.removeAttribute("hidden");
+    }
+
+    // Oculta la ventana modal 
+    hideModal() {
+        this.modal.setAttribute("hidden", "");
+    }
+
+    // Asigna el evento a los botones
+    addEventListeners() {
+        const rulesButton = document.querySelector("section:nth-of-type(2) > button");
+
+        rulesButton.addEventListener("click", () => {
+            this.showModal();
+        });
+
+        this.closeButton.addEventListener("click", () => {
+            this.hideModal();
+        });
+    }
 }
     

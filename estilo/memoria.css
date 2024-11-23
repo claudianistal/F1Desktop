@@ -56,6 +56,7 @@ section:nth-of-type(2) > article {
 /*Especificidad: 022*/
 section:nth-of-type(2) > article[data-state=flip] {
     transform: rotateY(180deg);
+
 }
 
 /*Especificidad: 022*/
@@ -66,27 +67,36 @@ section:nth-of-type(2) > article[data-state=revealed] {
 /*Especificidad: 013*/
 section:nth-of-type(2)  > article img{
     transform: rotateY(180deg);
+    background: #6a99e3f4;
 }
 
+/*Especificidad: 001*/
 button {
-    margin-left: 6.4vw;
+    background-color: #FFA303;
+    text-align: center;
+    box-sizing: border-box;  
+    flex-basis: 100%;
+    min-width: 20%;
+    margin: 1% 40% ;
+    justify-content: center;
 }
 
 
 
 @media (max-width: 480px) {
+    /*Especificidad: 011*/
     section:nth-of-type(2) {
         margin: 0;
     }
-
+    /*Especificidad: 012*/
     section:nth-of-type(2) > article {
        height: 8em;
     }
-
+    /*Especificidad: 013*/
     section:nth-of-type(2)> article h3 {
         font-size: x-small;
     }
-
+    /*Especificidad: 002*/
     section > ul {
         padding-left: 2em;
     }
@@ -95,20 +105,59 @@ button {
 
 /* Media query para tablets (máximo 768px de ancho) */
 @media (max-width: 768px) {
+    /*Especificidad: 011*/
     section:nth-of-type(2) {
         margin: 0;
     }
-
+    /*Especificidad: 012*/
     section:nth-of-type(2) > article {
        height: 11em;
     }
-
+    /*Especificidad: 013*/
     section:nth-of-type(2)> article h3 {
         font-size: small;
     }
-
+    /*Especificidad: 002*/
     section > ul {
         padding-left: 2em;
     }
     
+}
+
+/*Especificidad: 012*/
+section:nth-of-type(2) > section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2em;
+    border: 0.125em solid #FFA303;
+    border-radius: 0.625em;
+    box-shadow: 0em 0.25em 0.5em rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/*Especificidad: 022*/
+section:nth-of-type(2)::after > section[hidden] {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+
+/*Especificidad: 013*/
+section:nth-of-type(2)::after > section {
+    display: block; 
+}
+
+/*Especificidad: 001*/
+p {
+    padding: 0;
 }

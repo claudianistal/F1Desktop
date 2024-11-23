@@ -155,7 +155,7 @@ class Circuito {
         lector.onload = (evento) => {
             const contenidoSVG = evento.target.result;
             
-            const article = document.querySelector('article');
+            const article = document.querySelector('figure');
             article.innerHTML = contenidoSVG;
         };
         lector.readAsText(file);

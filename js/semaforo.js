@@ -77,7 +77,7 @@ class Semaforo{
         
         var main = document.getElementsByTagName('main')[0];
         const p = document.createElement('p');
-        const content = document.createTextNode("El tiempo de reacción ha sido: " + tiempo + " milisegundos ");
+        const content = document.createTextNode("El tiempo de reacción ha sido: " + tiempo/1000 + " segundos ");
         p.appendChild(content);
         main.appendChild(p);
         
@@ -90,4 +90,9 @@ class Semaforo{
         botonArranque.disabled = false;
     }
 
+
+    createRecordForm(){
+        var main = document.getElementsByTagName('main')[0];
+        const formulario = document.createElement('form');
+    }
 }

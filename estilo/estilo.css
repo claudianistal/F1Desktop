@@ -184,12 +184,19 @@ picture{
     picture{
         padding: 4vw;
     }
+
+    
 }
 
 @media (max-width: 480px) {
     /*Especificidad: 001*/
     picture{
         padding: 2vw;
+    }
+
+    img {
+        padding: 0;
+        width: 100%;
     }
 }
 
@@ -201,17 +208,18 @@ audio{
     outline: none; 
 }
 
-main > div{
+/*Especificidad: 003*/
+main > h3 + div{
     width: 100%; 
     height: 50em;
 }
 
-/*Especificidad: 012*/
+/*Especificidad: 003*/
 main > section + div{
     width: 100%; 
     height: 50em;
 }
-
+/*Especificidad: 012*/
 main > article:last-child{
     width: 90%;
     min-height: 30em; 
@@ -219,21 +227,87 @@ main > article:last-child{
     position: relative;
     resize: both;
 }
-
-main > article > svg {
+/*Especificidad: 003*/
+main > figure > svg {
     width: 100%;
     height: auto;  
     max-width: 100%;
     padding: 0;
     margin: 0;
 }
-
-main > article > svg > polyline{
+/*Especificidad: 004*/
+main > figure > svg > polyline{
     width: 100px;
     height: auto;
 }
 
 
+/*Para noticias.html */
+
+/*Especificidad: 011*/
+h4:first-child {
+    padding: 0;
+}
+/*Especificidad: 001*/
+form {
+    display: grid;
+    gap: 1rem; 
+}
+/*Especificidad: 001*/
+label {
+    display: block; 
+    margin-bottom: 0.5rem; 
+}
+/*Especificidad: 001*/
+textarea {
+    width: 100%;
+    height: 3rem;
+    resize: vertical; 
+}
+/*Especificidad: 001*/
+button {
+    margin-top: 1rem; 
+    align-self: start;
+}
+
+/* Para circuito.xml */
+
+/*Especificidad: 011*/
+input[type="file"] {
+    margin-bottom: 1rem;
+    display: block; 
+}
+/*Especificidad: 002*/
+h3:has(+ input) {
+   padding: 0;
+}
+
+/*Para api.html */
+
+/*Especificidad: 001*/
+img{
+    width: 18em;
+    height: auto;
+}
+
+/*Especificidad: 001*/
+canvas {
+    border: 1px solid black;
+    margin-top: 2em;
+    width: 100%;
+    height: 25em;   
+    background-color: #f0f0f0;
+    display: block;
+}
+
+h3:has(+ button) {
+    padding: 0;
+}
+
+p:has(+ img) {
+    padding: 0;
+}
+ 
 
 /* 
     #E9EAEC -> blanco roto 

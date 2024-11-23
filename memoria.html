@@ -40,21 +40,31 @@
         <h2>Menú de Juegos</h2>
         <ul>
             <li><a href="memoria.html" title="Juego de Memoria">Juego de Memoria</a></li>
-            <li><a href="semaforo.html" title="Juego del Semáforo">Juego del Semáforo</a></li>
+            <li><a href="semaforo.php" title="Juego del Semáforo">Juego del Semáforo</a></li>
+            <li><a href="api.html" title="Ejercicio apis">Api</a></li>
         </ul>
     </section>
     
-    <button>Reglas del Juego</button>
+    
     <section>
         <h2>Juego de Memoria</h2>
+        <button>Reglas del Juego</button>
+        <section hidden>
+            <h4>Reglas del Juego</h4>
+            <p>En el Juego de cartas de Memoria tu objetivo es encontrar todas las parejas de cartas que representan los equipos de F1.</p>
+            <ul>
+                <li>Haz clic en una carta para destaparla.</li>
+                <li>Si las dos cartas descubiertas son iguales, se mantendrán visibles.</li>
+                <li>Si no coinciden, ambas cartas se ocultarán nuevamente.</li>
+            </ul>
+            <button>Cerrar</button>
+        </section>
     </section>
     
 
     <script>
         const juegoMemoria = new Memoria();
-        document.querySelector("button").addEventListener("click", function() {
-            juegoMemoria.muestraReglasJuego();
-        });
+        const reglas = new ReglasJuego();
     </script>
 
 </body>

@@ -16,6 +16,24 @@
     <script src="js/semaforo.js" type="text/javascript"></script>
 </head>
 
+<?php
+    class Record {
+        protected $server;
+        protected $user;
+        protected $pass;
+        protected $dbname;
+        public function __construct()
+        {
+            $this->server = "localhost";
+            $this->user = "DBUSER2024";
+            $this->pass = "DBPSWD2024";
+            $this->dbname = "records";
+        }
+        
+    }
+
+?>
+
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>

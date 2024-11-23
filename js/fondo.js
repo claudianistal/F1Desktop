@@ -24,7 +24,8 @@ class Fondo {
                     $("body").css({
                         "background-image": `url(${photoURL})`,
                         "background-size": "cover",
-                        "background-repeat": "no-repeat"
+                        "background-repeat": "no-repeat",
+                        "min-height": "95vh"
                     });
                 }
             });
