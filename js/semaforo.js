@@ -75,11 +75,12 @@ class Semaforo{
 
         const tiempo = this.clic_moment - this.unload_moment;
         
+        var body = document.getElementsByTagName('body')[0];
         var main = document.getElementsByTagName('main')[0];
         const p = document.createElement('p');
         const content = document.createTextNode("El tiempo de reacción ha sido: " + tiempo/1000 + " segundos ");
         p.appendChild(content);
-        main.appendChild(p);
+        body.appendChild(p);
         
         main.classList.remove('unload');
         main.classList.remove('load');
@@ -88,11 +89,72 @@ class Semaforo{
         botonReaccion.disabled = true;
         const botonArranque = document.querySelector('main button:first-of-type');
         botonArranque.disabled = false;
+
+        this.createRecordForm(tiempo);
     }
 
 
-    createRecordForm(){
-        var main = document.getElementsByTagName('main')[0];
+    createRecordForm(tiempoReaccion){
+        var body = document.getElementsByTagName('body')[0];
+
         const formulario = document.createElement('form');
+        formulario.action = "semaforo.php";
+        formulario.method = "POST";
+
+        const labelNombre = document.createElement('label');
+        const nombre = document.createTextNode("Introduzca su nombre: ");
+        labelNombre.appendChild(nombre);
+        const textNombre = document.createElement('input');
+        textNombre.name = "nombre";
+        textNombre.required = true;
+        formulario.appendChild(labelNombre);
+        formulario.appendChild(textNombre);
+
+        const labelApellidos = document.createElement('label');
+        const apellido = document.createTextNode("Introduzca sus apellidos: ");
+        labelApellidos.appendChild(apellido);
+        const textApellidos = document.createElement('input');
+        textApellidos.name = "apellidos";
+        textApellidos.required = true;
+        formulario.appendChild(labelApellidos);
+        formulario.appendChild(textApellidos);
+
+        const labelNivel = document.createElement('label');
+        const nivel = document.createTextNode("Nivel de dificultad: ");
+        labelNivel.appendChild(nivel);
+        const textNivel = document.createElement('input');
+        textNivel.name = "nivel";
+        textNivel.value = this.difficulty;
+        textNivel.readOnly = true; // Para que no se pueda modificar
+        formulario.appendChild(labelNivel);
+        formulario.appendChild(textNivel);
+
+        const labelTiempo = document.createElement('label');
+        const tiempo = document.createTextNode("Tiempo de reacción: ");
+        labelTiempo.appendChild(tiempo);
+        const textTiempo = document.createElement('input');
+        textTiempo.name = "tiempo";
+        textTiempo.value = tiempoReaccion/1000;
+        textTiempo.readOnly = true; // Para que no se pueda modificar
+        formulario.appendChild(labelTiempo);
+        formulario.appendChild(textTiempo);
+
+        const boton = document.createElement('button');
+        boton.textContent = "Guardar en Base de Datos";
+        boton.type = "submit";
+        formulario.appendChild(boton);
+
+        formulario.addEventListener('submit', function() {
+            boton.disabled = true;
+        });
+
+        body.appendChild(formulario);
+        
+    }
+
+
+    addToHTML(html){
+        const place = document.querySelector("form");
+        place.insertAdjacentHTML("afterend", html);
     }
 }

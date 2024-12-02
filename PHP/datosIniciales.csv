@@ -1,0 +1,24 @@
+#Tabla:equipo
+id_equipo,nombre_equipo,pais_origen
+1,Mercedes,Alemania
+2,Red Bull,Austria
+
+#Tabla:circuito
+id_circuito,nombre_circuito,localizacion,longitud,capacidad
+1,Monza,Italia,5.793,100000
+2,Spa-Francorchamps,Belgica,7.004,70000
+
+#Tabla:piloto
+id_piloto,nombre,apellido,nacionalidad,id_equipo
+1,Lewis,Hamilton,Reino Unido,1
+2,Max,Verstappen,Países Bajos,2
+
+#Tabla:carrera
+id_carrera,nombre_carrera,fecha,pais,id_circuito
+1,Gran Premio de Italia,2023-09-03,Italia,1
+2,Gran Premio de Belgica,2023-07-30,Bélgica,2
+
+#Tabla:resultado
+id_resultado,id_piloto,id_carrera,posicion,tiempo
+1,1,1,1,1:20:00
+2,2,1,2,1:21:30

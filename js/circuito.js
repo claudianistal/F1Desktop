@@ -1,8 +1,8 @@
 class Circuito {
     constructor() {
-        this.areaVisualizacion = $("section"); 
+        this.areaVisualizacion = $("section");
     }
-
+    
     // Método para leer y procesar el archivo
     readInputFileXML(file) {
         const tipoTexto = /text.xml|application.xml|xml/;
@@ -10,53 +10,66 @@ class Circuito {
             alert("Por favor, sube un archivo XML.");
             return;
         }
-
+    
         const lector = new FileReader();
         lector.onload = (evento) => {
             const contenidoXML = evento.target.result;
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(contenidoXML, "application/xml");
-
+    
             this.convertToHTML(xmlDoc);
         };
         lector.readAsText(file);
     }
-
+    
     // Convierte el XML en HTML y lo muestra en el área de visualización
     convertToHTML(xmlDoc) {
         let htmlContent = "";
-
-        // Recorre todos los elementos de nivel 1 en el XML (<evento>, <circuito>, etc.)
+    
+        // Recorre todos los elementos de nivel 1 en el XML
         $(xmlDoc).children().each((_, elemento) => {
             htmlContent += `<h2>${elemento.tagName}</h2>`;
-
+    
             // Recorre todos los hijos de cada elemento de nivel 1
             $(elemento).children().each((_, subElemento) => {
                 htmlContent += `<h3>${subElemento.tagName}</h3>`;
-
-               
-
+    
                 // Itera sobre los atributos de cada subelemento, si los hay
                 $.each(subElemento.attributes, (_, attr) => {
                     htmlContent += `<p><strong>${attr.name}:</strong> ${attr.value}</p>`;
                 });
-
+    
                 // Si el subelemento tiene hijos, itera sobre ellos
                 $(subElemento).children().each((_, nestedElemento) => {
-                    htmlContent += `<h4>${nestedElemento.tagName}</h4>`;
-                    htmlContent += `<p>${nestedElemento.textContent.trim()}</p>`;
-
-                    // Itera sobre los atributos de cada elemento anidado, si los hay
+                    const tagName = nestedElemento.tagName.toLowerCase();
+                    //Si es una referencia, una imagen o un video, creo el elemento html correspondiente
+                    if (tagName === "referencia") {
+                        const linkText = nestedElemento.textContent.trim();
+                        const linkUrl = linkText.split(": ")[1]; // Extrae la URL después de ": "
+                        htmlContent += `<p><a href="${linkUrl}" target="_blank">${linkText}</a></p>`;
+                    } else if (tagName === "foto") {
+                        const imageUrl = `xml/${nestedElemento.textContent.trim()}`;
+                        htmlContent += `<img src="${imageUrl}" alt="Foto relacionada""> <p></p>`;
+                    } else if (tagName === "video") {
+                        const videoUrl = `xml/${nestedElemento.textContent.trim()}`;
+                        htmlContent += `
+                            <video controls preload="auto">
+                                <source src="${videoUrl}" type="video/mp4">
+                            </video>`;
+                    } else {
+                        htmlContent += `<h4>${nestedElemento.tagName}</h4>`;
+                        htmlContent += `<p>${nestedElemento.textContent.trim()}</p>`;
+                    }
                     $.each(nestedElemento.attributes, (_, attr) => {
                         htmlContent += `<p><strong>${attr.name}:</strong> ${attr.value}</p>`;
                     });
                 });
             });
         });
-
-        
+    
         this.areaVisualizacion.append(htmlContent);
     }
+    
 
 
     readInputFileKML(file) {
@@ -154,11 +167,29 @@ class Circuito {
         const lector = new FileReader();
         lector.onload = (evento) => {
             const contenidoSVG = evento.target.result;
+            const scaleFactor = 0.3; // Factor de escala para hacer más pequeño el SVG
             
-            const article = document.querySelector('figure');
-            article.innerHTML = contenidoSVG;
+            // Creo un contenedor temporal para manipular el contenido del SVG
+            const parser = new DOMParser();
+            const svgDoc = parser.parseFromString(contenidoSVG, "image/svg+xml");
+    
+            // Escalo los puntos de los elementos del <polyline>
+            const polylines = svgDoc.querySelectorAll("polyline");
+            polylines.forEach(polyline => {
+                const points = polyline.getAttribute("points");
+                const scaledPoints = points.split(" ").map(point => {
+                    const [x, y] = point.split(",").map(Number);
+                    return `${x * scaleFactor},${y * scaleFactor}`;
+                }).join(" ");
+                polyline.setAttribute("points", scaledPoints);
+            });
+    
+            const article = document.querySelector('article');
+            article.innerHTML = new XMLSerializer().serializeToString(svgDoc.documentElement);
         };
+    
         lector.readAsText(file);
     }
+    
     
 }

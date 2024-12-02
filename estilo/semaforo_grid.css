@@ -23,10 +23,9 @@ main {
     width: 100%;
     height: 50%;
     margin: auto;
-    
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
     gap: 5% 3%;
     align-items: center;
     justify-content: center;
@@ -99,8 +98,8 @@ main.load.unload div {
     animation-fill-mode: forwards;
 }
 
-main > p {
-    grid-column: 1 / -1;
+p {
+    text-align: center;
 }
 
 @media (max-width: 480px) {

@@ -72,14 +72,31 @@ section:nth-of-type(2)  > article img{
 
 /*Especificidad: 001*/
 button {
-    background-color: #FFA303;
-    text-align: center;
-    box-sizing: border-box;  
+    background-color: #FFA303; 
+    color: white;
+    font-size: 1.5rem; 
+    padding: 15px 30px; 
+    border: none; 
+    border-radius: 20px; 
+    box-sizing: border-box;
     flex-basis: 100%;
     min-width: 20%;
-    margin: 1% 40% ;
+    margin: 1% 40%;
+    text-align: center;
+    cursor: pointer; 
     justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
+
+/* Efecto hover para el botón */
+/*Especificidad: 011*/
+button:hover {
+    transform: scale(1.1); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4); 
+    background-color: #FF8800; 
+}
+
 
 
 
@@ -90,7 +107,8 @@ button {
     }
     /*Especificidad: 012*/
     section:nth-of-type(2) > article {
-       height: 8em;
+        width: 30%;
+        height: 8em;
     }
     /*Especificidad: 013*/
     section:nth-of-type(2)> article h3 {
@@ -99,6 +117,11 @@ button {
     /*Especificidad: 002*/
     section > ul {
         padding-left: 2em;
+    }
+
+    button{
+        padding:0;
+        font-size: smaller;
     }
     
 }
@@ -120,6 +143,10 @@ button {
     /*Especificidad: 002*/
     section > ul {
         padding-left: 2em;
+    }
+    button{
+        padding:0;
+        font-size: medium;
     }
     
 }

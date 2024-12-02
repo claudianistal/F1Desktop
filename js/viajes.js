@@ -67,7 +67,48 @@ class Viajes{
 
         const input = document.querySelector("input:last-of-type");
         input.disabled = true;
-    }   
+    }  
+    
+    // Método para mover los slides
+    moveSlides() {
+        this.slides.forEach((slide, indx) => {
+          const trans = 100 * (indx - this.curSlide);
+          slide.style.transform = `translateX(${trans}%)`; // Cambiar transform usando JavaScript nativo
+        });
+      }
+    
+      // Método para ir al siguiente slide
+    nextSlide() {
+        if (this.curSlide === this.maxSlide) {
+          this.curSlide = 0;
+        } else {
+          this.curSlide++;
+        }
+        this.moveSlides();
+    }
+    
+      // Método para ir al slide anterior
+    prevSlide() {
+        if (this.curSlide === 0) {
+          this.curSlide = this.maxSlide;
+        } else {
+          this.curSlide--;
+        }
+        this.moveSlides();
+    }
+
+    // Método para inicializar los eventos
+    initCarrusel() {
+        this.slides = document.querySelectorAll('img');
+        this.nextButton = document.querySelector('button:first-of-type'); 
+        this.prevButton = document.querySelector('button:nth-of-type(2)'); 
+        this.curSlide = 0; 
+        this.maxSlide = this.slides.length - 1; 
+        this.nextButton.addEventListener("click", () => this.nextSlide());
+
+        this.prevButton.addEventListener("click", () => this.prevSlide());
+    }
+
 }
 
 const viaje = new Viajes();

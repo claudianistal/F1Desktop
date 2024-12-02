@@ -12,6 +12,8 @@ class F1Locator {
         this.canvas = document.querySelector("main > canvas");
         this.context = this.canvas.getContext('2d');
         this.drawing = false;
+        this.canvas.width = this.canvas.offsetWidth;
+        this.canvas.height = this.canvas.offsetHeight;
     
         // Vincular los eventos del ratón para el dibujo
         this.canvas.addEventListener('mousedown', this.startDrawing.bind(this));
@@ -90,35 +92,30 @@ class F1Locator {
      // Método para mostrar la imagen del circuito
     displayCircuitImage(imageUrl) {
         var imageElement = document.querySelector("img");
-        imageElement.src = imageUrl; // Establece la imagen
-        imageElement.style.display = "block"; // Asegura que la imagen sea visible
+        imageElement.src = imageUrl; 
     }
 
     //--------------------------------------- API CANVAS --------------------------------------------
 
-    // Iniciar el dibujo
     startDrawing(event) {
         this.drawing = true;
         this.context.beginPath();
         const rect = this.canvas.getBoundingClientRect();
-        this.context.moveTo(event.clientX - rect.left, event.clientY - rect.top); 
+        this.context.moveTo(event.clientX - rect.left, event.clientY - rect.top);
     }
 
-    // Dibujar en el canvas
     draw(event) {
         if (!this.drawing) return;
         const rect = this.canvas.getBoundingClientRect();
-        this.context.lineTo(event.clientX - rect.left, event.clientY - rect.top); 
+        this.context.lineTo(event.clientX - rect.left, event.clientY - rect.top);
         this.context.stroke();
     }
 
-    // Detener el dibujo
     stopDrawing() {
         this.drawing = false;
         this.context.closePath();
     }
 
-    // Limpiar el lienzo
     clearCanvas() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
