@@ -35,12 +35,13 @@ class Viajes{
         const mapUrlMovil = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${this.longitud},${this.latitud},${zoomLevel}/220x110?access_token=${mapboxToken}`;
         
         const mapaArticle = document.querySelector("article");
+        const titulo = document.querySelector("h3");
         mapaArticle.innerHTML = `<picture>
                                     <source media="(max-width:465px)" srcset="${mapUrlMovil}">
                                     <source media="(max-width:799px)" srcset="${mapUrlTablet}">
                                     <img src="${mapUrl}" alt="Mapa de la posición del usuario"></img>  
                                 </picture>`;
-
+        mapaArticle.prepend(titulo);
         
 
         const input = document.querySelector("input:first-of-type");

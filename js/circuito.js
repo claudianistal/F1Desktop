@@ -49,11 +49,11 @@ class Circuito {
                         htmlContent += `<p><a href="${linkUrl}" target="_blank">${linkText}</a></p>`;
                     } else if (tagName === "foto") {
                         const imageUrl = `xml/${nestedElemento.textContent.trim()}`;
-                        htmlContent += `<img src="${imageUrl}" alt="Foto relacionada""> <p></p>`;
+                        htmlContent += `<img src="${imageUrl}" alt="Foto relacionada"> <p></p>`;
                     } else if (tagName === "video") {
                         const videoUrl = `xml/${nestedElemento.textContent.trim()}`;
                         htmlContent += `
-                            <video controls preload="auto">
+                            <video controls>
                                 <source src="${videoUrl}" type="video/mp4">
                             </video>`;
                     } else {
@@ -184,8 +184,16 @@ class Circuito {
                 polyline.setAttribute("points", scaledPoints);
             });
     
+         
             const article = document.querySelector('article');
-            article.innerHTML = new XMLSerializer().serializeToString(svgDoc.documentElement);
+            const title = article.querySelector('h3'); 
+
+            
+            const svgContent = new XMLSerializer().serializeToString(svgDoc.documentElement);
+
+            
+            article.innerHTML =  svgContent;  
+            article.prepend(title);
         };
     
         lector.readAsText(file);

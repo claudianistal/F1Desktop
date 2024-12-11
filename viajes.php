@@ -12,9 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
-    <script src="js/viajes.js" type="text/javascript"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <script src="js/viajes.js"></script>
+    <link defer href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
+    <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
 
 </head>
 
@@ -46,7 +46,7 @@
     
                 if ($json && isset($json->items)) {
                     foreach ($json->items as $item) {
-                        $largeImageURL = str_replace('_m.', '_b.', $item->media->m);
+                        $largeImageURL = $item->media->m;
                         $imgTag = '<img src="' . htmlspecialchars($largeImageURL) . '" alt="' . htmlspecialchars($item->title) . '" />';
                         $this->imagenes[] = $imgTag;
                     }
@@ -105,9 +105,10 @@
     <main>
         <input type="button" value="Obtener mapa estático" onclick = "viaje.getMapaEstatico()"/>
         <input type="button" value="Obtener mapa dinámico" onclick = "viaje.getMapaDinamico()"/>
-        <h3>Mapa Estático</h3>
+        
+        
         <article>
-            
+            <h3>Mapa Estático</h3>
         </article>
         <h3>Mapa Dinámico</h3>
         <div>

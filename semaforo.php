@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="stylesheet" type="text/css" href="estilo/semaforo_grid.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
-    <script src="js/semaforo.js" type="text/javascript"></script>
+    <script src="js/semaforo.js"></script>
 </head>
 
 <?php
@@ -102,8 +102,8 @@
         <ul>
             <li><a href="memoria.html" title="Juego de Memoria">Juego de Memoria</a></li>
             <li><a href="semaforo.html" title="Juego del Semáforo">Juego del Semáforo</a></li>
-            <li><a href="api.html" title="Ejercicio apis">Api</a></li>
-            <li><a href="creaPiloto.php" title="Crea tu Piloto de F1">Crea tu Piloto de F1</a></li>
+            <li><a href="api.html" title="Ejercicio apis">Minijuegos (API)</a></li>
+            <li><a href="comparadorPilotos.php" title="Compara los Resultados de los Pilotos">Compara los Resultados de los Pilotos</a></li>
         </ul>
     </section>
     

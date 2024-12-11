@@ -11,6 +11,7 @@ main {
 }
 
 /*Especificidad: 001*/
+/* Hereda el color de primer plano de body */
 article {
     background-color: #333652;
     border-radius: 1em;
@@ -20,6 +21,7 @@ article {
 }
 
 /*Especificidad: 002*/
+/* Hereda el color de fondo de body */
 article h3 {
     font-size: 1.5em;
     color: #FFA303;
@@ -29,6 +31,7 @@ article h3 {
 }
 
 /*Especificidad: 002*/
+/* Hereda el color de fondo de body */
 article p {
     font-size: 1.1em;
     color: #fcfcfc;
@@ -42,18 +45,18 @@ article p {
 @media (max-width: 768px) {
     /*Especificidad: 001*/
     main{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /*Redefinición para tablet*/
         margin: 0;
         font-size: small;
-        grid-gap: 0;
+        grid-gap: 0; /*Redefinición para tablet*/
     }
     /*Especificidad: 001*/
     article {
         width: 50%;
     }
-    /*Especificidad: 001*/
+    /*Especificidad: 002*/
     article p {
-        padding: 0;
+        padding: 0; /*Redefinición para tablet*/
     }
 }
 
@@ -61,18 +64,18 @@ article p {
 @media (max-width: 480px) {
     /*Especificidad: 001*/
     main{
-        grid-template-columns: repeat(1, 1fr);
-        margin: 0;
-        font-size: small;
-        grid-gap: 0;
+        grid-template-columns: repeat(1, 1fr);  /*Redefinición para móvil*/
+        margin: 0;  /*Redefinición para móvil*/
+        font-size: small;   /*Redefinición para móvil*/
+        grid-gap: 0;    /*Redefinición para móvil*/
     }
     /*Especificidad: 001*/
-    article {
-        width: 50%;
+    article {   
+        width: 50%; /*Redefinición para móvil*/
     }
-    /*Especificidad: 001*/
+    /*Especificidad: 002*/
     article p {
-        padding: 0;
+        padding: 0; /*Redefinición para móvil*/
     }
    
 }

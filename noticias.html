@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/article_elements.css" />
     <link rel="icon" type="image/ico" href="multimedia/imagenes/favicon.ico" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="js/noticias.js" type="text/javascript"></script>
+    <script src="js/noticias.js"></script>
 </head>
 
 <body>
@@ -38,22 +38,22 @@
 
     <h2>Noticias</h2>
     <main> 
-        <h4>Introduzca el archivo noticias.txt: </h4>
-        <input type="file">
+        <label for="input">Introduzca el archivo noticias.txt: </label>
+        <input id = "input" type="file">
         <output></output>
         
         <section>
             <h3>Creación de Noticia: </h3>
             <form>
-                <label>Título:</label>
-                <textarea></textarea>
+                <label for="textarea1">Título:</label>
+                <textarea id = "textarea1"></textarea>
     
-                <label>Entradilla:</label>
-                <textarea></textarea>
+                <label for="textarea2">Entradilla:</label>
+                <textarea id = "textarea2"></textarea>
     
-                <label>Autor:</label>
-                <textarea></textarea>
-                <button type="button" onclick="noticiasApi.crearNoticia()">Añadir Noticia</button>
+                <label for = "textarea3">Autor:</label>
+                <textarea id = "textarea3"></textarea>
+                <button type="button">Añadir Noticia</button>
             </form>
         </section>
     
@@ -63,6 +63,10 @@
         </section>
     
         <script>
+            const botonCargarNoticias = document.querySelector("button");
+            botonCargarNoticias.addEventListener("click", function() {
+                noticiasApi.crearNoticia();
+            });
             $("input[type='file']").on("change", function(event) {
                 const file = event.target.files[0];
                 noticiasApi.readInputFile(file);

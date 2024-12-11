@@ -37,12 +37,12 @@ nav a{
 
 /*Especificidad: 012*/
 /* Estilo para el enlace activo */
-/*Color de fondo heredado de header*/
+/* Color de fondo heredado de header*/
 nav a.active {
     color: #FFA303; 
     font-weight: bold; 
-    border: 2px solid #ffcc00; 
-    border-radius: 5px; 
+    border: 0.125em solid #ffcc00;
+    border-radius: 0.3em; 
     padding: 0.2em;
 }
 
@@ -51,25 +51,25 @@ nav a.active {
 @media (max-width: 768px) {
     /*Especificidad: 001*/
     header {
-        flex-direction: column; /* Mantiene el encabezado en columna. Redefinicion de header */
+        flex-direction: column; /* Mantiene el encabezado en columna. Redefinicion de header para tablet */
         align-items: center; /* Centra el contenido */
     }
 
     /*Especificidad: 001*/
     h1 {
-        font-size: 2em; /* Redefinicion de h1*/
-        padding: 1em; /* Redefinicion de h1*/
+        font-size: 2em; /* Redefinicion de h1 para tablet*/
+        padding: 1em; /* Redefinicion de h1 para tablet*/
     }
 
     /*Especificidad: 001*/
     nav {
-        padding-left: 0; /* Elimina el padding izquierdo. Redefinicion de nav */
-        padding-bottom: 1em; /* Ajusta el padding inferior. Redefinicion de nav*/
+        padding-left: 0; /* Elimina el padding izquierdo. Redefinicion de nav para tablet */
+        padding-bottom: 1em; /* Ajusta el padding inferior. Redefinicion de nav para tablet*/
     }
 
     /*Especificidad: 002*/
     nav a {
-        padding: 0.5em 1em; /* Ajusta el espaciado para enlaces. Redefinicion de nav a */
+        padding: 0.5em 1em; /* Ajusta el espaciado para enlaces. Redefinicion de nav a para tablet*/
         display: block; /* Hace que cada enlace ocupe toda la línea */
         text-align: center; /* Centra el texto de los enlaces */
     }
@@ -79,11 +79,11 @@ nav a.active {
 @media (max-width: 480px) {
     /*Especificidad: 001*/
     h1 {
-        font-size: 1.5em; 
+        font-size: 1.5em;   /* Redefinición para móvil */
     }
 
     /*Especificidad: 002*/
     nav a {
-        padding: 0.5em; /* Reduce el espaciado interno */
+        padding: 0.5em; /* Reduce el espaciado interno. Redefinición para móvil*/
     }
 }

@@ -2,23 +2,87 @@
 id_equipo,nombre_equipo,pais_origen
 1,Mercedes,Alemania
 2,Red Bull,Austria
+3,Ferrari,Italia
+4,McLaren,Reino Unido
+5,Alpine,Francia
+6,AlphaTauri,Italia
+7,Aston Martin,Reino Unido
+8,Haas,Estados Unidos
+9,Alfa Romeo,Suecia
+
 
 #Tabla:circuito
 id_circuito,nombre_circuito,localizacion,longitud,capacidad
 1,Monza,Italia,5.793,100000
 2,Spa-Francorchamps,Belgica,7.004,70000
+3,Silverstone,Reino Unido,5.891,150000
+4,Montreal,Canadá,4.361,120000
+5,Singapur,Singapur,5.063,85000
+6,Suzuka,Japón,5.807,155000
+7,Interlagos,Brasil,4.309,125000
+8,Abu Dhabi,Emiratos Árabes Unidos,5.281,60000
+9,Baku,Azerbaiyán,6.003,40000
+
 
 #Tabla:piloto
 id_piloto,nombre,apellido,nacionalidad,id_equipo
 1,Lewis,Hamilton,Reino Unido,1
 2,Max,Verstappen,Países Bajos,2
+3,Charles,Leclerc,Monaco,3
+4,Lando,Norris,Reino Unido,4
+5,Sergio,Pérez,México,2
+6,George,Russell,Reino Unido,1
+7,Fernando,Alonso,España,7
+8,Sebastian,Vettel,Alemania,7
+9,Pierre,Gasly,Francia,5
+10,Yuki,Tsuno,Japón,6
+11,Valtteri,Bottas,Finlandia,9
+12,Kevin,Magnussen,Dinamarca,8
+13,Mick,Schumacher,Alemania,8
+14,Alexander,Albon,Tailandia,9
+15,Esteban,Ocon,Francia,5
+
 
 #Tabla:carrera
 id_carrera,nombre_carrera,fecha,pais,id_circuito
 1,Gran Premio de Italia,2023-09-03,Italia,1
 2,Gran Premio de Belgica,2023-07-30,Bélgica,2
+3,Gran Premio de Gran Bretaña,2023-07-09,Reino Unido,3
+4,Gran Premio de Canadá,2023-06-18,Canadá,4
+5,Gran Premio de Singapur,2023-09-17,Singapur,5
+6,Gran Premio de Japón,2023-09-24,Japón,6
+7,Gran Premio de Brasil,2023-11-05,Brasil,7
+8,Gran Premio de Abu Dhabi,2023-11-26,Emiratos Árabes Unidos,8
+9,Gran Premio de Azerbaiyán,2023-04-30,Azerbaiyán,9
+
 
 #Tabla:resultado
 id_resultado,id_piloto,id_carrera,posicion,tiempo
 1,1,1,1,1:20:00
 2,2,1,2,1:21:30
+3,3,1,3,1:22:15
+4,2,2,1,1:23:45
+5,1,2,2,1:24:10
+6,5,2,3,1:25:00
+7,4,3,1,1:28:15
+8,1,3,2,1:28:50
+9,6,3,3,1:29:10
+10,5,4,1,1:30:45
+11,2,4,2,1:31:00
+12,3,4,3,1:31:20
+13,7,5,1,1:35:45
+14,10,5,2,1:36:20
+15,4,5,3,1:37:10
+16,6,6,1,1:25:50
+17,11,6,2,1:26:30
+18,8,6,3,1:26:50
+19,9,7,1,1:19:45
+20,3,7,2,1:20:20
+21,13,7,3,1:21:00
+22,7,8,1,1:40:00
+23,1,8,2,1:41:30
+24,14,8,3,1:42:10
+25,15,9,1,1:33:45
+26,11,9,2,1:34:20
+27,4,9,3,1:35:50
+

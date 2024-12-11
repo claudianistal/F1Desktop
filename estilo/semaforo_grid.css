@@ -11,10 +11,10 @@
 
 @keyframes apagar {
     from {
-        background-color: red;
+        background-color: red; /*Redefinición para cuando se apaga. Color de primer plano heredado de div*/
     }
     to {
-        background-color: #000A;
+        background-color: #000A;    /*Redefinición para cuando se apaga. Color de primer plano heredado de div*/
     }
 }
 
@@ -47,6 +47,7 @@ main > h2 {
 
 
 /*Especificidad: 001*/
+/* Color de primer plano heredado de body */
 div {
     width: 60%;
     background-color: #000A;
@@ -97,19 +98,23 @@ main.load.unload div {
     animation-delay: 1.5s;
     animation-fill-mode: forwards;
 }
-
+/*Especificidad: 001*/
 p {
     text-align: center;
+}
+/*Especificidad: 011*/
+p:first-of-type{
+    text-align: left;
 }
 
 @media (max-width: 480px) {
     /*Especificidad: 001*/
     main {
-        width: auto;
+        width: auto; /*Redefinición para moviles*/
     }
     /*Especificidad: 001*/
     div {
-        width: auto;
+        width: auto; /*Redefinición para moviles*/
     }
 }
 
@@ -117,10 +122,10 @@ p {
 @media (max-width: 768px) {
     /*Especificidad: 001*/
     main {
-        width: auto;
+        width: auto;    /*Redefinición para tablet*/
     }
     /*Especificidad: 001*/
     div {
-        width: auto;
+        width: auto;    /*Redefinición para tablet*/
     }
 }

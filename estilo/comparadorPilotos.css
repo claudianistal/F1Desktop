@@ -1,0 +1,22 @@
+/*Claudia Nistal Martinez, UO294420*/
+
+/*Especificidad: 001*/
+h3{
+    padding: 0;
+}
+
+/*Especificidad: 001*/
+button{
+    width: 20%; 
+    padding: 0.5em 1em;  
+    font-size: 1rem;  
+    margin: 1em;  
+    cursor: pointer;  
+    background-color: #333652;  
+    color: #FFA303;  
+    border: none;  
+    border-radius: 0.3em;  
+}
+
+
+

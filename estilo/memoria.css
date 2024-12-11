@@ -7,7 +7,7 @@ section:nth-of-type(2){
     flex-wrap: wrap;
     justify-content: center;
     gap: 2%; /* Espacio entre las tarjetas */
-    justify-content: center;
+    justify-content: center;    /*Redefinición de la propiedad justify-content*/
 }
 
 
@@ -21,6 +21,7 @@ section:nth-of-type(2) h2 {
 
 
 /*Especificidad: 013*/
+/* Color de primer plano heredado de body */
 section:nth-of-type(2)> article h3, section:nth-of-type(2)  > article img {
     margin: 0;
     width: 100%;
@@ -32,6 +33,7 @@ section:nth-of-type(2)> article h3, section:nth-of-type(2)  > article img {
 }
 
 /*Especificidad: 012*/
+/* Color de fondo heredado de section */
 section:nth-of-type(2) h3 {
     display: flex;
     flex-direction: row;
@@ -50,7 +52,7 @@ section:nth-of-type(2) > article {
     cursor: pointer;
     transform-style: preserve-3d;
     transition: transform .5s;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 /*Especificidad: 022*/
@@ -65,19 +67,20 @@ section:nth-of-type(2) > article[data-state=revealed] {
 }
 
 /*Especificidad: 013*/
+/* Color de primer plano heredado de section */
 section:nth-of-type(2)  > article img{
     transform: rotateY(180deg);
-    background: #6a99e3f4;
+    background: #6a99e3f4;  /*Redefinición del color de fondo cuando se giran las tarjetas */
 }
 
 /*Especificidad: 001*/
 button {
     background-color: #FFA303; 
-    color: white;
+    color: #333652;
     font-size: 1.5rem; 
-    padding: 15px 30px; 
+    padding: 0.9em 1.8em; 
     border: none; 
-    border-radius: 20px; 
+    border-radius: 1.25em; 
     box-sizing: border-box;
     flex-basis: 100%;
     min-width: 20%;
@@ -85,7 +88,7 @@ button {
     text-align: center;
     cursor: pointer; 
     justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0.25em 0.375em rgba(0, 0, 0, 0.3); 
     transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 
@@ -93,7 +96,7 @@ button {
 /*Especificidad: 011*/
 button:hover {
     transform: scale(1.1); 
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 0.375em 0.5em rgba(0, 0, 0, 0.4); 
     background-color: #FF8800; 
 }
 
@@ -103,12 +106,12 @@ button:hover {
 @media (max-width: 480px) {
     /*Especificidad: 011*/
     section:nth-of-type(2) {
-        margin: 0;
+        margin: 0; 
     }
     /*Especificidad: 012*/
     section:nth-of-type(2) > article {
-        width: 30%;
-        height: 8em;
+        width: 30%; /* Redefinición para movil*/
+        height: 8em; /* Redefinición para movil*/
     }
     /*Especificidad: 013*/
     section:nth-of-type(2)> article h3 {
@@ -118,10 +121,10 @@ button:hover {
     section > ul {
         padding-left: 2em;
     }
-
+    /*Especificidad: 001*/
     button{
-        padding:0;
-        font-size: smaller;
+        padding:0; /* Redefinición para movil*/
+        font-size: smaller; /* Redefinición para movil*/
     }
     
 }
@@ -130,28 +133,30 @@ button:hover {
 @media (max-width: 768px) {
     /*Especificidad: 011*/
     section:nth-of-type(2) {
-        margin: 0;
+        margin: 0; /* Redefinición para tablet*/
     }
     /*Especificidad: 012*/
     section:nth-of-type(2) > article {
-       height: 11em;
+       height: 11em; /* Redefinición para tablet*/
     }
     /*Especificidad: 013*/
     section:nth-of-type(2)> article h3 {
-        font-size: small;
+        font-size: small; /* Redefinición para tablet*/
     }
     /*Especificidad: 002*/
     section > ul {
-        padding-left: 2em;
+        padding-left: 2em; 
     }
+    /*Especificidad: 001*/
     button{
-        padding:0;
-        font-size: medium;
+        padding:0; /* Redefinición para tablet*/
+        font-size: medium; /* Redefinición para tablet*/
     }
     
 }
 
 /*Especificidad: 012*/
+/* Color de primer plano heredado de body */
 section:nth-of-type(2) > section {
     position: fixed;
     top: 50%;
@@ -165,7 +170,8 @@ section:nth-of-type(2) > section {
     z-index: 1000;
 }
 
-/*Especificidad: 022*/
+/*Especificidad: 023*/
+/* Color de primer plano heredado de body */
 section:nth-of-type(2)::after > section[hidden] {
     content: '';
     position: fixed;

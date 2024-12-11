@@ -50,18 +50,20 @@ body>p:first-of-type {
         
         display: none;
     }
-
+    /*Especificidad: 001*/
     p {
-        padding: 0;
+        padding: 0; /* Redefinición de padding para móviles */
         margin: 1%;
         overflow-wrap: anywhere; /* Dividir palabras largas */
     }
+    /*Especificidad: 001*/
     h3 {
-        padding: 0;
+        padding: 0; /* Redefinición de padding para móviles */
         margin: 1%;
     }
+    /*Especificidad: 001*/
     h4 {
-        padding: 0;
+        padding: 0; /* Redefinición de padding para móviles */
         margin: 1%;
     }
     
@@ -109,6 +111,7 @@ ol {
 
 /*Especificidad: 001*/
 /* Estilo general para la tabla */
+/* Hereda el color de primer plano de body */
 table {
     width: 80%;
     border-collapse: collapse;
@@ -182,7 +185,7 @@ picture{
 @media (max-width: 768px) {
     /*Especificidad: 001*/
     picture{
-        padding: 4vw;
+        padding: 4vw; /* Redefinición de padding para móviles */
     }
 
     
@@ -191,16 +194,17 @@ picture{
 @media (max-width: 480px) {
     /*Especificidad: 001*/
     picture{
-        padding: 2vw;
+        padding: 2vw;   /* Redefinición de padding para móviles */
     }
-
+    /*Especificidad: 001*/
     img {
         padding: 0;
         width: 100%;
+        height: auto;
     }
-
+    /*Especificidad: 001*/
     video{
-        padding: 0;
+        padding: 0; /* Redefinición de padding para móviles */
     }
 }
 
@@ -295,6 +299,7 @@ p + img{
 }
 
 /*Especificidad: 001*/
+/* Color de primer plano heredado de body */
 canvas {
     border: 0.5em solid #333652;
     margin-top: 2em;
@@ -324,7 +329,7 @@ h3 + img {
 
 /*Para carrusel de imagenes en viajes.php */
 
-/*Especificidad: 002*/
+/*Especificidad: 003*/
 div + article > img {
     width: 90vw;
     max-width: 90vh;
@@ -345,6 +350,7 @@ div + article {
 }
 
 /*Especificidad: 002*/
+/* Color de primer plano heredado de article */
 article > button {
     position: absolute;
     width: 2em;
