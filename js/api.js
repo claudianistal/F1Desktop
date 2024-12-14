@@ -21,6 +21,11 @@ class F1Locator {
         this.canvas.addEventListener('mouseup', this.stopDrawing.bind(this));
         this.canvas.addEventListener('mouseout', this.stopDrawing.bind(this));
 
+        this.canvas.addEventListener('touchstart', this.startDrawing.bind(this));
+        this.canvas.addEventListener('touchmove', this.draw.bind(this));
+        this.canvas.addEventListener('touchend', this.stopDrawing.bind(this));
+        this.canvas.addEventListener('touchcancel', this.stopDrawing.bind(this)); // Por seguridad en algunos navegadores
+
         // Para el reproductor de música
         this.audioPlayer = document.querySelector("audio");
         this.audioSource = document.createElement("source");
