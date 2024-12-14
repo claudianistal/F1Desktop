@@ -105,24 +105,46 @@ class F1Locator {
     startDrawing(event) {
         this.drawing = true;
         this.context.beginPath();
-        const rect = this.canvas.getBoundingClientRect();
-        this.context.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+
+        // Obtén las coordenadas correctas (mouse o táctil)
+        const { x, y } = this.getPosition(event);
+        this.context.moveTo(x, y);
     }
 
+    // Dibuja en el canvas
     draw(event) {
         if (!this.drawing) return;
-        const rect = this.canvas.getBoundingClientRect();
-        this.context.lineTo(event.clientX - rect.left, event.clientY - rect.top);
+
+        const { x, y } = this.getPosition(event);
+        this.context.lineTo(x, y);
         this.context.stroke();
     }
 
+    // Detén el dibujo
     stopDrawing() {
         this.drawing = false;
         this.context.closePath();
     }
 
+    // Limpia el canvas
     clearCanvas() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
+    // Obtén las coordenadas dependiendo del evento
+    getPosition(event) {
+        const rect = this.canvas.getBoundingClientRect();
+        if (event.touches && event.touches[0]) {
+            return {
+                x: event.touches[0].clientX - rect.left,
+                y: event.touches[0].clientY - rect.top,
+            };
+        } else {
+            return {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top,
+            };
+        }
     }
 
     //--------------------------------------- API Web Audio ----------------------------------------------
