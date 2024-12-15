@@ -104,6 +104,7 @@ class F1Locator {
     //--------------------------------------- API CANVAS --------------------------------------------
 
     startDrawing(event) {
+
       this.drawing = true;
       this.context.beginPath();
 
