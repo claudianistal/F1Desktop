@@ -20,7 +20,6 @@ h2{
 /*Color de fondo heredado de body*/
 h3{
     color: #BA0F30;
-    padding-left: 5em;
 }
 
 /*Especificidad: 001*/
@@ -285,10 +284,6 @@ input[type="file"] {
     margin-bottom: 1rem;
     display: block; 
 }
-/*Especificidad: 002*/
-h3:has(+ input) {
-   padding: 0;
-}
 
 /*Para api.html */
 
@@ -306,15 +301,6 @@ canvas {
     width: 99%;
     height: 25em;
     background-color: #f0f0f0;
-}
-
-/*Especificidad: 002*/
-h3:has(+ button) {
-    padding: 0;
-}
-/*Especificidad: 002*/
-p:has(+ img) {
-    padding: 0;
 }
 
 /* Para circuito.xml */

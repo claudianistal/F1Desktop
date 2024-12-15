@@ -21,6 +21,12 @@ class F1Locator {
         this.canvas.addEventListener('mouseup', this.stopDrawing.bind(this));
         this.canvas.addEventListener('mouseout', this.stopDrawing.bind(this));
 
+        //Vincular los eventos del touchpad para el dibujo en el movil o tablet
+        this.canvas.addEventListener('touchstart', this.startDrawing.bind(this));
+        this.canvas.addEventListener('touchmove', this.draw.bind(this));
+        this.canvas.addEventListener('touchend', this.stopDrawing.bind(this));
+        this.canvas.addEventListener('touchcancel', this.stopDrawing.bind(this)); 
+
         // Para el reproductor de música
         this.audioPlayer = document.querySelector("audio");
         this.audioSource = document.createElement("source");
@@ -98,27 +104,50 @@ class F1Locator {
     //--------------------------------------- API CANVAS --------------------------------------------
 
     startDrawing(event) {
-        this.drawing = true;
-        this.context.beginPath();
-        const rect = this.canvas.getBoundingClientRect();
-        this.context.moveTo(event.clientX - rect.left, event.clientY - rect.top);
+      this.drawing = true;
+      this.context.beginPath();
+
+      // Obtén las coordenadas correctas (mouse o táctil)
+      const { x, y } = this.getPosition(event);
+      this.context.moveTo(x, y);
     }
 
+    // Dibuja en el canvas
     draw(event) {
         if (!this.drawing) return;
-        const rect = this.canvas.getBoundingClientRect();
-        this.context.lineTo(event.clientX - rect.left, event.clientY - rect.top);
+
+        const { x, y } = this.getPosition(event);
+        this.context.lineTo(x, y);
         this.context.stroke();
     }
 
+    // Detén el dibujo
     stopDrawing() {
         this.drawing = false;
         this.context.closePath();
     }
 
+    // Limpia el canvas
     clearCanvas() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
+
+    // Obtén las coordenadas dependiendo del evento
+    getPosition(event) {
+        const rect = this.canvas.getBoundingClientRect();
+        if (event.touches && event.touches[0]) {
+            return {
+                x: event.touches[0].clientX - rect.left,
+                y: event.touches[0].clientY - rect.top,
+            };
+        } else {
+            return {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top,
+            };
+        }
+    }
+
 
     //--------------------------------------- API Web Audio ----------------------------------------------
 
