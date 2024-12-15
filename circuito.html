@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/togeojson/0.16.0/togeojson.min.js"></script>
     <script src="js/circuito.js"></script>
-    <link  defer href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
     <script  defer src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
     
 </head>
@@ -41,12 +41,12 @@
     </p>
     <main>
         <h2>Circuitos</h2>
-        <h3>Introduzca el fichero circuitoEsquema.xml: </h3>
-        <input type="file">
-        <h3>Introduzca el fichero circuito.kml: </h3>
-        <input type="file">
-        <h3>Introduzca el fichero alimetria.svg: </h3>
-        <input type="file">
+        <label for="file1">Introduzca el fichero circuitoEsquema.xml: </label>
+        <input type="file" id="file1">
+        <label for="file2">Introduzca el fichero circuito.kml: </label>
+        <input type="file" id="file2">
+        <label for="file3">Introduzca el fichero alimetria.svg: </label>
+        <input type="file" id="file3">
         <!-- Sección para el HTML que se lee de circuitoEsquema.xml-->
         <section>
 
